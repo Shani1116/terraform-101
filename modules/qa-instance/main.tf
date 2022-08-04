@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
 
   tags = merge(
       var.tags,
-      map("Env", "QA")
+      tomap({"Env" = "QA"})
   )
 
   root_block_device {
